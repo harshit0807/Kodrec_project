@@ -14,8 +14,8 @@ mongoose.connect(mongoURL, {
   useNewUrlParser: true,
   useUnifiedTopology: true
 })
-.then(() => console.log('✅ Connected to MongoDB'))
-.catch(err => console.error('❌ MongoDB connection error:', err));
+.then(() => console.log(' Connected to MongoDB'))
+.catch(err => console.error(' MongoDB connection error:', err));
 
 
 app.post('/api/analyze', async (req, res) => {
@@ -35,7 +35,7 @@ app.post('/api/analyze', async (req, res) => {
       sentiment: response.data.sentiment,
       keywords: response.data.keywords
     });
-    console.log('✅ Saved to MongoDB:', saved); 
+    console.log(' Saved to MongoDB:', saved); 
 
     
     res.json(saved);

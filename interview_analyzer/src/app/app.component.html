@@ -1,0 +1,22 @@
+<div class="container">
+  <h1>Answer Analyzer</h1>
+
+  <div class="form-group">
+    <label>Question:</label>
+    <input [(ngModel)]="question" placeholder="Enter question" />
+  </div>
+
+  <div class="form-group">
+    <label>Answer:</label>
+    <textarea [(ngModel)]="answer" placeholder="Enter candidate's answer"></textarea>
+  </div>
+
+  <button (click)="analyzeAnswer()">Submit</button>
+
+  <div class="result" *ngIf="result">
+    <h2>Result</h2>
+    <p><strong>Score:</strong> {{ result.correctness_score }}</p>
+    <p><strong>Sentiment:</strong> {{ result.sentiment }}</p>
+    <p><strong>Keywords:</strong> {{ result.keywords.join(', ') }}</p>
+  </div>
+</div>

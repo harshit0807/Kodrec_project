@@ -1,0 +1,13 @@
+<div class="container">
+    <h2>AI Interview Evaluator</h2>
+    <input [(ngModel)]="question" placeholder="Enter Question" class="input" />
+    <textarea [(ngModel)]="answer" placeholder="Enter Answer" class="textarea"></textarea>
+    <button (click)="submitAnswer()">Submit</button>
+  
+    <div *ngIf="result">
+      <p><strong>Correctness:</strong> {{ result.correctness_score }}%</p>
+      <p><strong>Sentiment:</strong> {{ result.sentiment }}</p>
+      <p><strong>Keywords:</strong> {{ result.keywords.join(', ') }}</p>
+    </div>
+  </div>
+  
